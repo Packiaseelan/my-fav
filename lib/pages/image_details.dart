@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'dart:io';
 
-import '../models/image.dart';
+import 'package:my_fav/models/data.dart';
+
 
 class ImageDetailsPage extends StatefulWidget {
-  final Images selectedImage;
+  final DataModel selectedImage;
   ImageDetailsPage(this.selectedImage);
   @override
   State<StatefulWidget> createState() => _ImageDetailsPageState();
@@ -44,7 +45,7 @@ class _ImageDetailsPageState extends State<ImageDetailsPage> {
         children: <Widget>[
           Center(
             child: Image.file(
-              File(widget.selectedImage.imagePath),
+              File(widget.selectedImage.path),
               width: 250,
               height: 250,
             ),

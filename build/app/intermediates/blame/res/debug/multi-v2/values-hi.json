@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/packiaseelan/Downloads/flutter_app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-hi/values-hi.xml",
+            "outputFile": "/Users/packiaseelan/code/my-fav/my-fav/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-hi/values-hi.xml",
             "map": [
                 {
                     "source": "/Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/2d3b24726f69f1cfa659770a4e581581/res/values-hi/values-hi.xml",

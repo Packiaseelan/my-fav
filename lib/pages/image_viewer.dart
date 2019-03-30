@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:zoomable_image/zoomable_image.dart';
+import 'package:my_fav/models/data.dart';
 
 import 'dart:io';
 
-import 'image_details.dart';
-import '../models/image.dart';
+import 'package:my_fav/pages/image_details.dart';
+import 'package:zoomable_image/zoomable_image.dart';
 
 class ImageViewer extends StatelessWidget {
-  final Images selectedImage;
+  final DataModel selectedImage;
   ImageViewer(this.selectedImage);
 
   @override
@@ -33,7 +33,7 @@ class ImageViewer extends StatelessWidget {
       body: Center(
           child: ZoomableImage(
         FileImage(
-          File(selectedImage.imagePath),
+          File(selectedImage.path),
         ),
       )),
     );

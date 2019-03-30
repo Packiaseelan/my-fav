@@ -1,39 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
 import 'package:file_picker/file_picker.dart';
 
 import 'dart:io';
 
-import '../widgets/no_data.dart';
-import '../scoped-model/main.dart';
-import '../models/image.dart';
-import 'image_viewer.dart';
+import 'package:my_fav/data/dbhelper.dart';
+import 'package:my_fav/models/data.dart';
+import 'package:my_fav/pages/image_viewer.dart';
+import 'package:my_fav/utils/enumerations.dart';
+import 'package:my_fav/widgets/no_data.dart';
 
 class ImagePage extends StatefulWidget {
+  final FileTypes types;
+  ImagePage(this.types);
   @override
   State<StatefulWidget> createState() => _ImagePageState();
 }
 
 class _ImagePageState extends State<ImagePage> {
+  DBHelper _helper = DBHelper();
+  List<DataModel> imageList;
+  int count = 0;
+
   String _fileName = '...';
   String _path = '...';
   String _extension;
-  bool _hasValidMime = false;
   FileType _pickingType;
 
-  Widget _buildImageList(MainModel model) {
+  Widget _buildImageList(List<DataModel> model) {
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
         return Dismissible(
-          key: Key(model.images[index].id),
+          key: Key(imageList[index].id.toString()),
           onDismissed: (DismissDirection direction) {
-            model.deleteImage(index);
+            _delete(context, imageList[index]);
           },
           background: Container(color: Colors.red),
           child: InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return ImageViewer(model.images[index]);
+                return ImageViewer(model[index]);
               }));
             },
             child: Card(
@@ -42,18 +47,14 @@ class _ImagePageState extends State<ImagePage> {
                   ListTile(
                     leading: CircleAvatar(
                       child: ClipOval(
-                        child: Image.file(
-                          File(model.images[index].imagePath),
-                          fit: BoxFit.fill,
-                          width: 100,
-                          height: 100,
-                        ),
+                        child: _getAvatar(model[index].path),
                       ),
                     ),
-                    title: Text(model.images[index].name),
-                    subtitle: Text(File(model.images[index].imagePath)
-                        .lengthSync()
-                        .toString()),
+                    title: Text(model[index].name),
+                    subtitle: Text(
+                        ((File(model[index].path).lengthSync() / 1024))
+                                .toStringAsFixed(2) +
+                            ' kb'),
                     trailing:
                         IconButton(icon: Icon(Icons.share), onPressed: () {}),
                   ),
@@ -63,49 +64,124 @@ class _ImagePageState extends State<ImagePage> {
           ),
         );
       },
-      itemCount: model.images.length,
+      itemCount: model.length,
     );
   }
 
-  void _openFileExplorer(MainModel model) async {
-    _pickingType = FileType.IMAGE;
-    if (_pickingType != FileType.CUSTOM || _hasValidMime) {
-      try {
-        _path = await FilePicker.getFilePath(
-            type: _pickingType, fileExtension: _extension);
-      } catch (e) {
-        print("Unsupported operation" + e.toString());
-      }
+  void _openFileExplorer(List<DataModel> model) async {
+    _pickingType = _getPickType(widget.types); //FileType.IMAGE;
 
-      if (!mounted) return;
+    try {
+      _path = await FilePicker.getFilePath(
+          type: _pickingType, fileExtension: _extension);
+    } catch (e) {
+      print("Unsupported operation" + e.toString());
+    }
 
-      setState(() {
-        _fileName = _path != null ? _path.split('/').last : '...';
-      });
+    if (!mounted) return;
 
-      if (_path != null) {
-        int count = model.images.length + 1;
-        model.addImage(
-            Images(id: 'Image $count', imagePath: _path, name: _fileName));
-      }
+    setState(() {
+      _fileName = _path != null ? _path.split('/').last : '...';
+    });
+
+    if (_path != null) {
+      var map = Map<String, dynamic>();
+      map['name'] = _fileName;
+      map['path'] = _path;
+      var data = DataModel.fromMap(map);
+      _insert(context, data);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return ScopedModelDescendant(
-      builder: (BuildContext context, Widget child, MainModel model) {
-        return Scaffold(
-          body: model.images.length > 0
-              ? _buildImageList(model)
-              : NoDataAvailable('images'),
-          floatingActionButton: FloatingActionButton(
-            tooltip: 'Add new image',
-            child: Icon(Icons.add),
-            onPressed: () => _openFileExplorer(model),
-          ),
-        );
-      },
+    if (imageList == null) {
+      imageList = List<DataModel>();
+      _updateListView();
+    }
+
+    return Scaffold(
+      body: imageList.length > 0
+          ? _buildImageList(imageList)
+          : NoDataAvailable(widget.types),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Add new image',
+        child: Icon(Icons.add),
+        onPressed: () => _openFileExplorer(imageList),
+      ),
     );
+  }
+
+  void _delete(BuildContext context, DataModel data) async {
+    var result = await _helper.delete(widget.types, data.id);
+    if (result != 0) {
+      _showSnackBar(context, '${data.name} removed from my favourite.');
+      _updateListView();
+    }
+  }
+
+  void _insert(BuildContext context, DataModel data) async {
+    var result = await _helper.insert(widget.types, data.toMap());
+    if (result != 0) {
+      _showSnackBar(context, '${data.name} added to my favourite.');
+      _updateListView();
+    }
+  }
+
+  void _showSnackBar(BuildContext context, String message) {
+    Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text(message),
+    ));
+  }
+
+  void _updateListView() async {
+    if (imageList == null) {
+      imageList = List<DataModel>();
+    }
+    var list = _helper.getDataList(widget.types);
+
+    list.then((dataList) {
+      setState(() {
+        imageList = dataList;
+        count = dataList.length;
+      });
+    });
+  }
+
+  FileType _getPickType(FileTypes type) {
+    switch (type) {
+      case FileTypes.Image:
+        return FileType.IMAGE;
+      case FileTypes.Audio:
+        _extension = 'mp3';
+        return FileType.CUSTOM;
+      case FileTypes.Video:
+        return FileType.VIDEO;
+      case FileTypes.Documents:
+        _extension = 'doc';
+        return FileType.CUSTOM;
+      default:
+        return FileType.CUSTOM;
+    }
+  }
+
+  Widget _getAvatar(String path) {
+    switch (widget.types) {
+      case FileTypes.Image:
+        return Image.file(
+          File(path),
+          fit: BoxFit.fill,
+          width: 100,
+          height: 100,
+        );
+      case FileTypes.Audio:
+        return Icon(Icons.audiotrack);
+      case FileTypes.Video:
+        return Icon(Icons.video_library);
+      case FileTypes.Documents:
+        return Icon(Icons.attachment);
+      default:
+        return Icon(Icons.favorite);
+    }
   }
 }

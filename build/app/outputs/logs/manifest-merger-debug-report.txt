@@ -1,11 +1,13 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:1:1-41:12
-MERGED from [:file_picker] /Users/packiaseelan/Downloads/flutter_app/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-23:12
+ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:1:1-41:12
+MERGED from [:file_picker] /Users/packiaseelan/code/my-fav/my-fav/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:sqflite] /Users/packiaseelan/code/my-fav/my-fav/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-23:12
+MERGED from [:path_provider] /Users/packiaseelan/code/my-fav/my-fav/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-beta01.aar/ab89859970d2033ab8f8c0cd4442b1b5/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/3b0fa9b49d82c62728869425977ad4bc/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-beta01] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0-beta01.aar/51dfa24fda78d9dbfb0f9c62e61c96ce/AndroidManifest.xml:17:1-22:12
@@ -34,43 +36,43 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/packiaseelan/.grad
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/838dc776d9513192bf6c2989f631d825/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/4be15c6089ce3e9e6f1d65b2b6bf8e3c/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/afca3d3a422516c3e6f72d9bae4039f5/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:1:1-41:12
 	package
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:2:5-41
-		INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:2:5-41
+		INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:1:1-41:12
-		INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:1:1-41:12
+		INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:1:1-41:12
-		INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:1:1-41:12
+		INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:8:5-66
+ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:8:5-66
 	android:name
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:8:22-64
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:8:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:9:5-80
-MERGED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-81
-MERGED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-81
+ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:9:5-80
+MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-81
+MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:9:22-78
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:10:5-79
-MERGED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
-MERGED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
+ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:10:5-79
+MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
+MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:10:22-77
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:10:22-77
 application
-ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:17:5-40:19
-MERGED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
-MERGED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
+ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:17:5-40:19
+MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
+MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
 MERGED from [androidx.core:core:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/2d3b24726f69f1cfa659770a4e581581/AndroidManifest.xml:22:5-89
 MERGED from [androidx.core:core:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/2d3b24726f69f1cfa659770a4e581581/AndroidManifest.xml:22:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/2e840df0ec9fb4f620c2737776ef1d14/AndroidManifest.xml:22:5-23:19
@@ -78,49 +80,53 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/pack
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/2d3b24726f69f1cfa659770a4e581581/AndroidManifest.xml:22:18-86
 	android:label
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:19:9-30
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:19:9-30
 	android:icon
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:20:9-36
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:20:9-36
 	android:name
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:18:9-57
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:18:9-57
 activity#comvbvb.example.flutterapp.MainActivity
-ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:21:9-39:20
+ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:21:9-39:20
 	android:launchMode
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:23:13-43
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:23:13-43
 	android:hardwareAccelerated
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:26:13-47
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:26:13-47
 	android:windowSoftInputMode
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:27:13-55
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:27:13-55
 	android:configChanges
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:25:13-137
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:25:13-137
 	android:theme
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:24:13-47
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:24:13-47
 	android:name
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:22:13-41
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:22:13-41
 meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
-ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:32:13-34:40
+ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:32:13-34:40
 	android:value
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:34:17-37
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:34:17-37
 	android:name
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:33:17-82
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:33:17-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:35:13-38:29
+ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:35:13-38:29
 action#android.intent.action.MAIN
-ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:36:17-68
+ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:36:17-68
 	android:name
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:36:25-66
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:36:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:37:17-76
+ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:37:17-76
 	android:name
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml:37:27-74
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:37:27-74
 uses-sdk
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
-MERGED from [:file_picker] /Users/packiaseelan/Downloads/flutter_app/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:file_picker] /Users/packiaseelan/Downloads/flutter_app/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
+MERGED from [:file_picker] /Users/packiaseelan/code/my-fav/my-fav/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:file_picker] /Users/packiaseelan/code/my-fav/my-fav/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] /Users/packiaseelan/code/my-fav/my-fav/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] /Users/packiaseelan/code/my-fav/my-fav/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/packiaseelan/code/my-fav/my-fav/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/packiaseelan/code/my-fav/my-fav/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-beta01.aar/ab89859970d2033ab8f8c0cd4442b1b5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-beta01.aar/ab89859970d2033ab8f8c0cd4442b1b5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/3b0fa9b49d82c62728869425977ad4bc/AndroidManifest.xml:20:5-44
@@ -177,33 +183,33 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/packiaseel
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/4be15c6089ce3e9e6f1d65b2b6bf8e3c/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/afca3d3a422516c3e6f72d9bae4039f5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/afca3d3a422516c3e6f72d9bae4039f5/AndroidManifest.xml:20:5-44
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/packiaseelan/Downloads/flutter_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.CAMERA
-ADDED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-65
+ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-65
 	android:name
-		ADDED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-62
+		ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-62
 provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
-ADDED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
+ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
 	android:grantUriPermissions
-		ADDED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
+		ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
 	android:authorities
-		ADDED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-74
+		ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-74
 	android:exported
-		ADDED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
+		ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
 	android:name
-		ADDED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-82
+		ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-82
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:75
+ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:75
 	android:resource
-		ADDED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-72
+		ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-72
 	android:name
-		ADDED from [:image_picker] /Users/packiaseelan/Downloads/flutter_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
+		ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
