@@ -9,14 +9,14 @@ import 'package:my_fav/pages/image_viewer.dart';
 import 'package:my_fav/utils/enumerations.dart';
 import 'package:my_fav/widgets/no_data.dart';
 
-class ImagePage extends StatefulWidget {
+class ListPage extends StatefulWidget {
   final FileTypes types;
-  ImagePage(this.types);
+  ListPage(this.types);
   @override
-  State<StatefulWidget> createState() => _ImagePageState();
+  State<StatefulWidget> createState() => _ListPageState();
 }
 
-class _ImagePageState extends State<ImagePage> {
+class _ListPageState extends State<ListPage> {
   DBHelper _helper = DBHelper();
   List<DataModel> imageList;
   int count = 0;
@@ -37,9 +37,7 @@ class _ImagePageState extends State<ImagePage> {
           background: Container(color: Colors.red),
           child: InkWell(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return ImageViewer(model[index]);
-              }));
+              _onItemTapped(model[index]);
             },
             child: Card(
               child: Column(
@@ -51,10 +49,8 @@ class _ImagePageState extends State<ImagePage> {
                       ),
                     ),
                     title: Text(model[index].name),
-                    subtitle: Text(
-                        ((File(model[index].path).lengthSync() / 1024))
-                                .toStringAsFixed(2) +
-                            ' kb'),
+                    subtitle:
+                        Text(_calcSize(File(model[index].path).lengthSync())),
                     trailing:
                         IconButton(icon: Icon(Icons.share), onPressed: () {}),
                   ),
@@ -68,8 +64,24 @@ class _ImagePageState extends State<ImagePage> {
     );
   }
 
+  void _onItemTapped(DataModel model) {
+    switch (widget.types) {
+      case FileTypes.Image:
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return ImageViewer(model);
+        }));
+        break;
+      case FileTypes.Audio:
+        break;
+      case FileTypes.Video:
+        break;
+      case FileTypes.Documents:
+        break;
+    }
+  }
+
   void _openFileExplorer(List<DataModel> model) async {
-    _pickingType = _getPickType(widget.types); //FileType.IMAGE;
+    _pickingType = _getPickType(widget.types);
 
     try {
       _path = await FilePicker.getFilePath(
@@ -182,6 +194,23 @@ class _ImagePageState extends State<ImagePage> {
         return Icon(Icons.attachment);
       default:
         return Icon(Icons.favorite);
+    }
+  }
+
+  String _calcSize(int size) {
+    var res = size / 1024;
+    if (res <= 1024) {
+      return '${res.toStringAsFixed(2)} kb';
+    }
+    res = res / 1024;
+    if (res <= 1024) {
+      return '${res.toStringAsFixed(2)} mb';
+    }
+    res = res / 1024;
+    if (res <= 1024) {
+      return '${res.toStringAsFixed(2)} gb';
+    } else {
+      return '${res.toStringAsFixed(2)} tb';
     }
   }
 }

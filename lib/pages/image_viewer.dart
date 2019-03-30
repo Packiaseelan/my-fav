@@ -23,9 +23,9 @@ class ImageViewer extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.info),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return ImageDetailsPage(selectedImage);
-              }));
+              // Navigator.push(context, MaterialPageRoute(builder: (context) {
+              //   return ImageDetailsPage(selectedImage, false);
+              // }));
             },
           ),
         ],

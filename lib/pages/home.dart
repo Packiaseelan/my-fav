@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_fav/utils/enumerations.dart';
 
-import 'image.dart';
+import 'package:my_fav/pages/list_page.dart';
+import 'package:my_fav/utils/enumerations.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -40,10 +40,10 @@ class HomePage extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            ImagePage(FileTypes.Image),
-            ImagePage(FileTypes.Audio),
-            ImagePage(FileTypes.Video),
-            ImagePage(FileTypes.Documents),
+            ListPage(FileTypes.Image),
+            ListPage(FileTypes.Audio),
+            ListPage(FileTypes.Video),
+            ListPage(FileTypes.Documents),
           ],
         ),
       ),

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Mar 30 23:16:20 IST 2019
+#Sat Mar 30 23:36:21 IST 2019
 4.path=lib/x86/libflutter.so
 8.set=NATIVE_RESOURCE
 6.path=flutter_assets/vm_snapshot_data

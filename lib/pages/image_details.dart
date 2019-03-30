@@ -7,7 +7,8 @@ import 'package:my_fav/models/data.dart';
 
 class ImageDetailsPage extends StatefulWidget {
   final DataModel selectedImage;
-  ImageDetailsPage(this.selectedImage);
+  final bool isEditable;
+  ImageDetailsPage(this.selectedImage, this.isEditable);
   @override
   State<StatefulWidget> createState() => _ImageDetailsPageState();
 }
