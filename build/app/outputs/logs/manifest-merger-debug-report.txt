@@ -8,6 +8,7 @@ MERGED from [:file_picker] /Users/packiaseelan/code/my-fav/my-fav/build/file_pic
 MERGED from [:sqflite] /Users/packiaseelan/code/my-fav/my-fav/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-23:12
 MERGED from [:path_provider] /Users/packiaseelan/code/my-fav/my-fav/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-beta01.aar/ab89859970d2033ab8f8c0cd4442b1b5/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/3b0fa9b49d82c62728869425977ad4bc/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-beta01] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0-beta01.aar/51dfa24fda78d9dbfb0f9c62e61c96ce/AndroidManifest.xml:17:1-22:12
@@ -67,12 +68,16 @@ uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:10:5-79
 MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
 MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
+MERGED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-80
+MERGED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-80
 	android:name
 		ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:10:22-77
 application
 ADDED from /Users/packiaseelan/code/my-fav/my-fav/android/app/src/main/AndroidManifest.xml:17:5-40:19
 MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
 MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
+MERGED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-22:19
+MERGED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-22:19
 MERGED from [androidx.core:core:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/2d3b24726f69f1cfa659770a4e581581/AndroidManifest.xml:22:5-89
 MERGED from [androidx.core:core:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/2d3b24726f69f1cfa659770a4e581581/AndroidManifest.xml:22:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/2e840df0ec9fb4f620c2737776ef1d14/AndroidManifest.xml:22:5-23:19
@@ -127,6 +132,8 @@ MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_p
 MERGED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /Users/packiaseelan/code/my-fav/my-fav/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /Users/packiaseelan/code/my-fav/my-fav/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:6:5-44
+MERGED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:6:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-beta01.aar/ab89859970d2033ab8f8c0cd4442b1b5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-beta01.aar/ab89859970d2033ab8f8c0cd4442b1b5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/3b0fa9b49d82c62728869425977ad4bc/AndroidManifest.xml:20:5-44
@@ -213,3 +220,19 @@ ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_pi
 		ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-72
 	android:name
 		ADDED from [:image_picker] /Users/packiaseelan/code/my-fav/my-fav/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-83
+	android:name
+		ADDED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-80
+provider#androidx.core.content.FileProvider
+ADDED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-21:20
+	android:grantUriPermissions
+		ADDED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
+	android:authorities
+		ADDED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-64
+	android:exported
+		ADDED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
+	tools:replace
+		ADDED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-48
+	android:name
+		ADDED from [:open_file] /Users/packiaseelan/code/my-fav/my-fav/build/open_file/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-62

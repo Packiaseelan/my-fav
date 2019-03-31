@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:open_file/open_file.dart';
 
 import 'dart:io';
 
 import 'package:my_fav/data/dbhelper.dart';
 import 'package:my_fav/models/data.dart';
+import 'package:my_fav/pages/audio_player.dart';
 import 'package:my_fav/pages/image_viewer.dart';
 import 'package:my_fav/utils/enumerations.dart';
 import 'package:my_fav/widgets/no_data.dart';
@@ -37,7 +39,7 @@ class _ListPageState extends State<ListPage> {
           background: Container(color: Colors.red),
           child: InkWell(
             onTap: () {
-              _onItemTapped(model[index]);
+              _onItemTapped(model[index], index);
             },
             child: Card(
               child: Column(
@@ -48,7 +50,7 @@ class _ListPageState extends State<ListPage> {
                         child: _getAvatar(model[index].path),
                       ),
                     ),
-                    title: Text(model[index].name),
+                    title: Text(_getName(model[index])),
                     subtitle:
                         Text(_calcSize(File(model[index].path).lengthSync())),
                     trailing:
@@ -64,18 +66,30 @@ class _ListPageState extends State<ListPage> {
     );
   }
 
-  void _onItemTapped(DataModel model) {
+  String _getName(DataModel model) {
+    var text = model.alias;
+    if (text != '' && text != null)
+      return text;
+    else
+      return model.name;
+  }
+
+  void _onItemTapped(DataModel model, int index) {
     switch (widget.types) {
       case FileTypes.Image:
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return ImageViewer(model);
+          return ImageViewer(model, widget.types);
         }));
         break;
       case FileTypes.Audio:
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return AudioPlayer(index);
+        }));
         break;
       case FileTypes.Video:
         break;
       case FileTypes.Documents:
+        OpenFile.open(model.path);
         break;
     }
   }
@@ -146,7 +160,7 @@ class _ListPageState extends State<ListPage> {
     ));
   }
 
-  void _updateListView() async {
+   void _updateListView() async {
     if (imageList == null) {
       imageList = List<DataModel>();
     }
@@ -170,7 +184,7 @@ class _ListPageState extends State<ListPage> {
       case FileTypes.Video:
         return FileType.VIDEO;
       case FileTypes.Documents:
-        _extension = 'doc';
+        _extension = 'pdf';
         return FileType.CUSTOM;
       default:
         return FileType.CUSTOM;
@@ -182,7 +196,7 @@ class _ListPageState extends State<ListPage> {
       case FileTypes.Image:
         return Image.file(
           File(path),
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
           width: 100,
           height: 100,
         );
@@ -200,17 +214,17 @@ class _ListPageState extends State<ListPage> {
   String _calcSize(int size) {
     var res = size / 1024;
     if (res <= 1024) {
-      return '${res.toStringAsFixed(2)} kb';
+      return '${res.toStringAsFixed(2)} KB';
     }
     res = res / 1024;
     if (res <= 1024) {
-      return '${res.toStringAsFixed(2)} mb';
+      return '${res.toStringAsFixed(2)} MB';
     }
     res = res / 1024;
     if (res <= 1024) {
-      return '${res.toStringAsFixed(2)} gb';
+      return '${res.toStringAsFixed(2)} GB';
     } else {
-      return '${res.toStringAsFixed(2)} tb';
+      return '${res.toStringAsFixed(2)} TB';
     }
   }
 }

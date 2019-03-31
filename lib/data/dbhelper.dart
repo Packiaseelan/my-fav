@@ -36,13 +36,13 @@ class DBHelper {
 
   void _onCreate(Database db, int version) async {
     await db.execute(
-        'CREATE TABLE image (id INTEGER PRIMARY KEY, name TEXT, path TEXT, date TEXT)');
+        'CREATE TABLE image (id INTEGER PRIMARY KEY, name TEXT, path TEXT, date TEXT, alias TEXT, description TEXT)');
     await db.execute(
-        'CREATE TABLE audio (id INTEGER PRIMARY KEY, name TEXT, path TEXT, date TEXT)');
+        'CREATE TABLE audio (id INTEGER PRIMARY KEY, name TEXT, path TEXT, date TEXT, alias TEXT, description TEXT)');
     await db.execute(
-        'CREATE TABLE video (id INTEGER PRIMARY KEY, name TEXT, path TEXT, date TEXT)');
+        'CREATE TABLE video (id INTEGER PRIMARY KEY, name TEXT, path TEXT, date TEXT, alias TEXT, description TEXT)');
     await db.execute(
-        'CREATE TABLE document (id INTEGER PRIMARY KEY, name TEXT, path TEXT, date TEXT)');
+        'CREATE TABLE document (id INTEGER PRIMARY KEY, name TEXT, path TEXT, date TEXT, alias TEXT, description TEXT)');
   }
 
   // Fetch operation: Get all objects from database.
@@ -64,8 +64,8 @@ class DBHelper {
   Future<int> update(FileTypes type, Map<String, dynamic> map) async {
     Database db = await this.database;
     map['date'] = DateTime.now().toString();
-    var result =
-        db.update(_getTableName(type), map, where: 'id = ? ${map['id']}');
+     var result =
+         db.update(_getTableName(type), map, where: 'id = ?', whereArgs: [map['id']]);
     return result;
   }
 
