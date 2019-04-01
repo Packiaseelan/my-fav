@@ -1,4 +1,4 @@
-# flutter_app
+# my-fav App
 
 A new Flutter application.
 
