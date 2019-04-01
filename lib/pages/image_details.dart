@@ -26,7 +26,7 @@ class _ImageDetailsPageState extends State<ImageDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    _map = _toMap(widget.selectedImage);
+    _map = widget.selectedImage.toMap();
 
     return Scaffold(
       appBar: AppBar(
@@ -242,15 +242,4 @@ class _ImageDetailsPageState extends State<ImageDetailsPage> {
       return 'No description available for ${_getName()}, please edit and add description.';
   }
 
-  Map<String, dynamic> _toMap(DataModel model) {
-    var map = Map<String, dynamic>();
-    if (model != null) {
-      map['id'] = model.id;
-      map['name'] = model.name;
-      map['path'] = model.path;
-      map['alias'] = model.alias;
-      map['description'] = model.description;
-    }
-    return map;
-  }
 }

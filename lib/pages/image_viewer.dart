@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:my_fav/models/data.dart';
+import 'package:zoomable_image/zoomable_image.dart';
 
 import 'dart:io';
 
+import 'package:my_fav/models/data.dart';
 import 'package:my_fav/pages/image_details.dart';
 import 'package:my_fav/utils/enumerations.dart';
-import 'package:zoomable_image/zoomable_image.dart';
 
 class ImageViewer extends StatelessWidget {
-  final DataModel selectedImage;
+  final DataModel model;
   final FileTypes type;
-  ImageViewer(this.selectedImage, this.type);
-
+  ImageViewer(this.model, this.type);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(selectedImage.name),
+        title: Text(model.name),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
@@ -26,7 +25,7 @@ class ImageViewer extends StatelessWidget {
             icon: Icon(Icons.info),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return ImageDetailsPage(selectedImage, false, type);
+                return ImageDetailsPage(model, false, type);
               }));
             },
           ),
@@ -35,7 +34,7 @@ class ImageViewer extends StatelessWidget {
       body: Center(
           child: ZoomableImage(
         FileImage(
-          File(selectedImage.path),
+          File(model.path),
         ),
       )),
     );

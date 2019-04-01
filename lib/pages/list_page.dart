@@ -31,13 +31,7 @@ class _ListPageState extends State<ListPage> {
   Widget _buildImageList(List<DataModel> model) {
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
-        return Dismissible(
-          key: Key(imageList[index].id.toString()),
-          onDismissed: (DismissDirection direction) {
-            _delete(context, imageList[index]);
-          },
-          background: Container(color: Colors.red),
-          child: InkWell(
+        return InkWell(
             onTap: () {
               _onItemTapped(model[index], index);
             },
@@ -53,14 +47,16 @@ class _ListPageState extends State<ListPage> {
                     title: Text(_getName(model[index])),
                     subtitle:
                         Text(_calcSize(File(model[index].path).lengthSync())),
-                    trailing:
-                        IconButton(icon: Icon(Icons.share), onPressed: () {}),
+                    trailing: IconButton(
+                        icon: Icon(Icons.delete_outline),
+                        onPressed: () {
+                          _deleteDialog(context, imageList[index]);
+                        }),
                   ),
                 ],
               ),
             ),
-          ),
-        );
+          );
       },
       itemCount: model.length,
     );
@@ -142,8 +138,47 @@ class _ListPageState extends State<ListPage> {
     var result = await _helper.delete(widget.types, data.id);
     if (result != 0) {
       _showSnackBar(context, '${data.name} removed from my favourite.');
-      _updateListView();
+      //_updateListView();
     }
+  }
+
+  void _deleteDialog(BuildContext context, DataModel data) async {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return Theme(
+          data:
+              Theme.of(context).copyWith(dialogBackgroundColor: Colors.orange),
+          child: AlertDialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Text("Delete"),
+            content: Text(
+                'Are you sure want to remove ${data.alias ?? data.name} from favourite?'),
+            actions: <Widget>[
+              // usually buttons at the bottom of the dialog
+              FlatButton(
+                color: Theme.of(context).accentColor,
+                child: Text('Close', style: TextStyle(color: Colors.white),),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              FlatButton(
+                color: Theme.of(context).primaryColor,
+                child: Text('Okay', style: TextStyle(color: Colors.white),),
+                onPressed: () {
+                  _delete(context, data);
+                  _updateListView();
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   void _insert(BuildContext context, DataModel data) async {
@@ -160,7 +195,7 @@ class _ListPageState extends State<ListPage> {
     ));
   }
 
-   void _updateListView() async {
+  void _updateListView() async {
     if (imageList == null) {
       imageList = List<DataModel>();
     }

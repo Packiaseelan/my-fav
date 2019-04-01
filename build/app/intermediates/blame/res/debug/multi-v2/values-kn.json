@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/packiaseelan/code/my-fav/my-fav/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-kn/values-kn.xml",
+            "outputFile": "/Users/packiaseelan/code/my-fav/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-kn/values-kn.xml",
             "map": [
                 {
                     "source": "/Users/packiaseelan/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-beta01.aar/ab89859970d2033ab8f8c0cd4442b1b5/res/values-kn/values-kn.xml",

@@ -52,6 +52,12 @@ class DBHelper {
     return result;
   }
 
+  Future<List<Map<String, dynamic>>> getMap(FileTypes type, int id) async {
+    Database db = await this.database;
+    var result = db.query(_getTableName(type), where: 'id = ?', whereArgs: [id]);
+    return result;
+  }
+
   //Insert operation: Insert object into the database.
   Future<int> insert(FileTypes type, Map<String, dynamic> map) async {
     Database db = await this.database;
@@ -94,6 +100,11 @@ class DBHelper {
       dataList.add(DataModel.fromMap(data[i]));
     }
     return dataList;
+  }
+
+  Future<DataModel> getData(FileTypes type, int id) async {
+    var data = await getMap(type, id);
+    return DataModel.fromMap(data[0]);
   }
 
   _getTableName(FileTypes type) {
