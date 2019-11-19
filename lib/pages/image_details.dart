@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:my_fav/data/dbhelper.dart';
-
 import 'dart:io';
 
+import 'package:flutter/material.dart';
+
 import 'package:my_fav/models/data.dart';
+import 'package:my_fav/scope-models/main.dart';
 import 'package:my_fav/utils/enumerations.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class ImageDetailsPage extends StatefulWidget {
-  
   final DataModel selectedImage;
   final bool isEditable;
   final FileTypes type;
@@ -19,93 +19,145 @@ class ImageDetailsPage extends StatefulWidget {
 }
 
 class _ImageDetailsPageState extends State<ImageDetailsPage> {
-
-  DBHelper _helper = DBHelper();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  Map<String, dynamic> _map;
+  bool isEditable = false;
+  double top = 250;
+  MainModel mainModel;
 
   @override
   Widget build(BuildContext context) {
-    _map = widget.selectedImage.toMap();
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.selectedImage.name),
-        actions: <Widget>[
-          _buildActionButton(),
-        ],
-      ),
-      body: _contentPage(),
-    );
+    return ScopedModelDescendant<MainModel>(
+        builder: (BuildContext context, Widget child, MainModel model) {
+      mainModel = model;
+      return Scaffold(
+        // appBar: AppBar(
+        //   title: Text(widget.selectedImage.name),
+        //   actions: <Widget>[
+        //     _buildActionButton(),
+        //   ],
+        // ),
+        body: _contentPage(),
+      );
+    });
   }
 
   Widget _contentPage() {
-    if (MediaQuery.of(context).orientation == Orientation.landscape) {
-      return Row(
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    return Container(
+      width: double.maxFinite,
+      height: double.maxFinite,
+      child: Stack(
         children: <Widget>[
-          _imageAvatar(),
-          widget.isEditable ? _editableForm() : _displayDetails(),
-        ],
-      );
-    } else {
-      return Column(
-        children: <Widget>[
-          _imageAvatar(),
-          widget.isEditable ? _editableForm() : _displayDetails(),
-        ],
-      );
-    }
-  }
-
-  Widget _imageAvatar() {
-    return Center(
-      child: Container(
-        width: 250.0,
-        height: 250.0,
-        child: Stack(
-          children: <Widget>[
-            Center(
-              child: Container(
-                width: 200.0,
-                height: 200.0,
-                child: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: ClipOval(
-                      child: Image.file(
-                        File(widget.selectedImage.path),
-                        fit: BoxFit.cover,
-                      ),
-                    )),
+          _buildImage(),
+          Positioned(
+            top: 25,
+            right: 0,
+            child: Container(
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                color: Colors.black12.withOpacity(0.3),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25),
+                  bottomLeft: Radius.circular(25),
+                ),
               ),
-            )
-          ],
-        ),
+              child: _buildActionButton(),
+            ),
+          ),
+          Positioned(
+            top: top,
+            child: Container(
+                padding: EdgeInsets.all(32),
+                width: width,
+                height: height * 0.70,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(60),
+                    topRight: Radius.circular(60),
+                  ),
+                ),
+                child: Container(
+                  child: isEditable ? _editableForm() : _displayDetails(),
+                )),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildActionButton() {
-    if (!widget.isEditable) {
-      return IconButton(
-        icon: Icon(Icons.edit),
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return ImageDetailsPage(widget.selectedImage, true, widget.type);
-          }));
-        },
-      );
-    } else {
-      return SizedBox(
-        width: 0.0,
-        height: 0.0,
-      );
+  Widget _buildImage() {
+    double height = MediaQuery.of(context).size.height * 0.45;
+    switch (widget.type) {
+      case FileTypes.Image:
+        return Image.file(
+          File(widget.selectedImage.path),
+          fit: BoxFit.cover,
+          height: height,
+          width: MediaQuery.of(context).size.width,
+        );
+      case FileTypes.Audio:
+      case FileTypes.Video:
+        return Container(
+          color: Theme.of(context).primaryColor.withOpacity(0.4),
+          child: Center(
+            child: Icon(
+              Icons.music_note,
+              color: Colors.white,
+              size: 78,
+            ),
+          ),
+        );
+
+      case FileTypes.Documents:
+        return Container();
+      default:
+        return Container();
     }
   }
 
+  Widget _buildActionButton() {
+    return IconButton(
+      icon: Icon(isEditable ? Icons.save : Icons.edit),
+      iconSize: 25,
+      color: Colors.white,
+      onPressed: () {
+        setState(() {
+          top = 250;
+        });
+        if (isEditable)
+          _saveForm();
+        else {
+          setState(() {
+            isEditable = !isEditable;
+          });
+        }
+      },
+    );
+  }
+
   Widget _buildTextFormField(String type) {
+    var _focusNode = new FocusNode();
+    _focusNode.addListener(() {
+      if (_focusNode.hasFocus) {
+        setState(() {
+          if (type != 'alias')
+            top = 150;
+          else
+            top = 250;
+        });
+      } else {
+        setState(() {
+          top = 250;
+        });
+      }
+    });
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: TextFormField(
+        focusNode: _focusNode,
         decoration: InputDecoration(
             labelText: type == 'alias' ? 'Name' : 'Description',
             border:
@@ -122,53 +174,32 @@ class _ImageDetailsPageState extends State<ImageDetailsPage> {
               return 'Description is required and should be 10+ characters';
             }
           }
+          return null;
         },
         onSaved: (String value) {
           if (type == 'alias') {
-            _map['alias'] = value;
+            widget.selectedImage.alias = value;
           } else {
-            _map['description'] = value;
+            widget.selectedImage.description = value;
           }
         },
       ),
     );
   }
 
-  void _saveForm() async {
+  void _saveForm() {
     if (!_formKey.currentState.validate()) {
       return;
     }
     _formKey.currentState.save();
-    var result = await _helper.update(widget.type, _map);
-    if (result == 0) {
-      _showSnackBar(context, 'Problem while update ${_map['alias']}.');
-    }
-    Navigator.pop(context, false);
-  }
-
-  Widget _buildSaveButton() {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 15.0),
-      child: Material(
-        borderRadius: BorderRadius.circular(27.0),
-        shadowColor: Theme.of(context).primaryColorDark,
-        color: Theme.of(context).primaryColor,
-        elevation: 5.0,
-        child: MaterialButton(
-          minWidth: 200.0,
-          height: 42.0,
-          onPressed: () {
-            _saveForm();
-          },
-          //color: Colors.lightBlueAccent,
-          child: Text('Save', style: TextStyle(color: Colors.white)),
-        ),
-      ),
-    );
+    mainModel.update(widget.selectedImage, widget.type);
+    setState(() {
+      isEditable = !isEditable;
+    });
   }
 
   Widget _editableForm() {
-    return Expanded(
+    return Container(
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Form(
@@ -177,7 +208,6 @@ class _ImageDetailsPageState extends State<ImageDetailsPage> {
             children: <Widget>[
               _buildTextFormField('alias'),
               _buildTextFormField('description'),
-              _buildSaveButton(),
             ],
           ),
         ),
@@ -186,8 +216,8 @@ class _ImageDetailsPageState extends State<ImageDetailsPage> {
   }
 
   Widget _displayDetails() {
-    return Expanded(
-      child: ListView(
+    return Container(
+      child: Column(
         children: <Widget>[
           Center(
             child: Text(
@@ -207,12 +237,6 @@ class _ImageDetailsPageState extends State<ImageDetailsPage> {
         ],
       ),
     );
-  }
-
-  void _showSnackBar(BuildContext context, String message) {
-    Scaffold.of(context).showSnackBar(SnackBar(
-      content: Text(message),
-    ));
   }
 
   String _getNameOrDescription(String type) {
@@ -241,5 +265,4 @@ class _ImageDetailsPageState extends State<ImageDetailsPage> {
     else
       return 'No description available for ${_getName()}, please edit and add description.';
   }
-
 }
