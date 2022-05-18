@@ -1,4 +1,0 @@
-#Fri Mar 08 02:47:53 IST 2019
-base.0=/Users/packiaseelan/Downloads/flutter_app/build/app/intermediates/transforms/dexMerger/dynamicRelease/0
-path.0=classes.dex
-renamed.0=classes.dex
